@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "276125653695",
+    "firebase_url": "https://ths-app-26309.firebaseio.com",
+    "project_id": "ths-app-26309",
+    "storage_bucket": "ths-app-26309.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276125653695:android:a23b1435131d3961",
+        "android_client_info": {
+          "package_name": "com.samuelford48gmail.thssouth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276125653695-tiah3btn0cd3jd4tgvgh1ab1catfbk1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samuelford48gmail.thssouth",
+            "certificate_hash": "c5dc671b75c5dd1db4cc7e8dd3d9ec95a0295023"
+          }
+        },
+        {
+          "client_id": "276125653695-foprdtnvsq6qf4b8civgo9331l1njeki.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "276125653695-foprdtnvsq6qf4b8civgo9331l1njeki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSxzbF_rx78QOgLuUHS4Vp7ujiL5yDhNo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276125653695-foprdtnvsq6qf4b8civgo9331l1njeki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

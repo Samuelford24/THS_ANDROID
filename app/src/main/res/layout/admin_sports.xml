@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+
+        android:id="@+id/edit_text_sports2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:hint="   Football"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+
+        android:id="@+id/edit_text_sports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:hint="     Tennis"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_sports2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+
+        android:id="@+id/edit_text_sports8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:hint=" Volley Ball"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_sports"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+
+        android:id="@+id/edit_text_sports7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:hint="  B Soccer "
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_admin_sports13" />
+
+    <EditText
+
+        android:id="@+id/edit_text_sports6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="30dp"
+        android:hint="G Soccer  "
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_sports7"
+        app:layout_constraintTop_toBottomOf="@+id/button_admin_sports12" />
+
+    <EditText
+
+        android:id="@+id/edit_text_sports5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:hint="Girl's Golf"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_sports6"
+        app:layout_constraintTop_toBottomOf="@+id/button_admin_sports11" />
+
+    <EditText
+
+        android:id="@+id/edit_text_sports4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="39dp"
+        android:hint="       BCC  "
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_admin_sports9" />
+
+    <EditText
+
+        android:id="@+id/edit_text_sports3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:hint="           GCC"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_sports4"
+        app:layout_constraintTop_toBottomOf="@+id/button_admin_sports10" />
+
+    <Button
+        android:id="@+id/button_admin_sports13"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edit_text_events"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="11dp"
+        android:onClick="send1"
+        android:text="Send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_sports2" />
+
+    <Button
+        android:id="@+id/button_admin_sports12"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edit_text_events"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:onClick="send2"
+        android:text="Send"
+        app:layout_constraintStart_toEndOf="@+id/button_admin_sports13"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_sports" />
+
+    <Button
+        android:id="@+id/button_admin_sports11"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edit_text_events"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:onClick="send3"
+        android:text="Send"
+        app:layout_constraintStart_toEndOf="@+id/button_admin_sports12"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_sports8" />
+
+    <Button
+        android:id="@+id/button_admin_sports9"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edit_text_events"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:onClick="send4"
+        android:text="Send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_sports7" />
+
+    <Button
+        android:id="@+id/button_admin_sports10"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edit_text_events"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="26dp"
+        android:onClick="send5"
+        android:text="Send"
+        app:layout_constraintStart_toEndOf="@+id/button_admin_sports9"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_sports6" />
+
+    <Button
+        android:id="@+id/button_admin_sports8"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edit_text_events"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:onClick="send6"
+        android:text="Send"
+        app:layout_constraintStart_toEndOf="@+id/button_admin_sports10"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_sports5" />
+
+    <Button
+        android:id="@+id/button_admin_sports2"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edit_text_events"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:onClick="send7"
+        android:text="Send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_sports4" />
+
+    <Button
+        android:id="@+id/button_admin_sports"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edit_text_events"
+        android:layout_marginLeft="49dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="15dp"
+        android:onClick="send8"
+        android:text="Send"
+        app:layout_constraintStart_toEndOf="@+id/button_admin_sports2"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_sports3" />
+</android.support.constraint.ConstraintLayout>
