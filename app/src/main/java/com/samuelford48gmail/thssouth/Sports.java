@@ -2,7 +2,8 @@ package com.samuelford48gmail.thssouth;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -24,16 +25,17 @@ public class Sports extends AppCompatActivity implements View.OnClickListener {
         four = (ImageButton) findViewById(R.id.right_r1);
         five = (ImageButton) findViewById(R.id.right_r2);
         six = (ImageButton) findViewById(R.id.right_r3);
-        seven = (ImageButton) findViewById(R.id.football);
-        eight = (ImageButton) findViewById(R.id.volleyball);
+        //   seven = (ImageButton) findViewById(R.id.left_r3);
+        // eight = (ImageButton) findViewById(R.id.right_r3);
+
         one.setOnClickListener(this);
         two.setOnClickListener(this);
         three.setOnClickListener(this);
         four.setOnClickListener(this);
         five.setOnClickListener(this);
         six.setOnClickListener(this);
-        seven.setOnClickListener(this);
-        eight.setOnClickListener(this);
+        //  seven.setOnClickListener(this);
+        //eight.setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -41,52 +43,52 @@ public class Sports extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.left_r1:
                 i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Boys_cross-country";
+                sport = "Boys_bball";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.left_r2:
                 i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Boys_soccer";
+                sport = "Boys_swimming";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.left_r3:
                 i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Boys_tennis";
+                sport = "Wrestling";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.right_r1:
                 i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Girls_cross-country";
+                sport = "Girls_bball";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.right_r2:
                 i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Girls_soccer";
+                sport = "Girls_swimming";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.right_r3:
                 i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Girls_golf";
+                sport = "Bowling";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
-            case R.id.football:
+          /*  case R.id.left_r3:
                 i = new Intent(Sports.this, Girls_tennis.class);
                 sport = "Football";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
-            case R.id.volleyball:
+            case R.id.right_r3:
                 i = new Intent(Sports.this, Girls_tennis.class);
                 sport = "Girls_volleyball";
                 i.putExtra("sport", sport);
                 startActivity(i);
-                break;
+                break;*/
             default:
                 break;
         }

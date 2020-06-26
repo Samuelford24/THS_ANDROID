@@ -4,8 +4,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,13 +29,12 @@ public class Guidance extends AppCompatActivity {
 
 
         List<String> arrayList = new ArrayList<String>();
-        arrayList.add("Ms.Harden (A-Ca)");
-        arrayList.add("Mrs.Alsman (Cb-F)");
-        arrayList.add("Mrs.Trench (G-Ke)");
-        arrayList.add("Mrs.Compton (Kf-N)");
-        arrayList.add("Mrs.Tracy (O-SI)");
-        arrayList.add("Mr.Waugh (Sm-z)");
-        arrayList.add("Mr.Burks (College Connections Coach)");
+        arrayList.add("Ms.Harden (A-Cl)");
+        arrayList.add("Mr.Harden (C0-G)");
+        arrayList.add("Mrs.Trench (H-L)");
+        arrayList.add("Mrs.Compton (M-Ri)");
+        arrayList.add("Mrs.Tracy (Ro-Sn)");
+        arrayList.add("Mr.Waugh (S0-z)");
         arrayList.add("Mrs.Callahan (JAG)");
 
 
@@ -50,26 +50,7 @@ public class Guidance extends AppCompatActivity {
                                     long id) {
 
                 String item = ((TextView) view).getText().toString();
-                if (item.equals("Ms.Harden (A-Ca)")) {
-                    AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
-                    //builder.setIcon(R.drawable.open_browser);
-                    builder.setTitle("          OPEN URL?");
-                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            goToUrl("https://docs.google.com/forms/d/e/1FAIpQLSePsqIw9Rz0kNAt-89dTBVmx93MP0xMPt7Xcbw-DwWJ1-0KSA/viewform");
-                        }
-                    });
-                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.setCancelable(true);
-                    builder.show();
-
-                }
-                if (item.equals("Mrs.Alsman (Cb-F)")) {
+                if (item.equals("Ms.Harden (A-Cl)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(Guidance.this);
                     //builder.setIcon(R.drawable.open_browser);
@@ -87,7 +68,25 @@ public class Guidance extends AppCompatActivity {
                     builder.setCancelable(true);
                     builder.show();
                 }
-                if (item.equals("Mrs.Trench (G-Ke)")) {
+                if (item.equals("Mr.Harden (C0-G)")) {
+                    AlertDialog.Builder builder;
+                    builder = new AlertDialog.Builder(Guidance.this);
+                    //builder.setIcon(R.drawable.open_browser);
+                    builder.setTitle("          OPEN URL?");
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            goToUrl("https://docs.google.com/forms/d/e/1FAIpQLSePsqIw9Rz0kNAt-89dTBVmx93MP0xMPt7Xcbw-DwWJ1-0KSA/viewform");
+                        }
+                    });
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.setCancelable(true);
+                    builder.show();
+                }
+                if (item.equals("Mrs.Trench (H-L)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(Guidance.this);
                     // builder.setIcon(R.drawable.open_browser);
@@ -106,7 +105,7 @@ public class Guidance extends AppCompatActivity {
                     builder.show();
                 }
 
-                if (item.equals("Mrs.Compton (Kf-N)")) {
+                if (item.equals("Mrs.Compton (M-Ri)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(Guidance.this);
                     //builder.setIcon(R.drawable.open_browser);
@@ -125,7 +124,7 @@ public class Guidance extends AppCompatActivity {
                     builder.show();
                 }
 
-                if (item.equals("Mrs.Tracy (O-SI)")) {
+                if (item.equals("Mrs.Tracy (Ro-Sn)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(Guidance.this);
                     // builder.setIcon(R.drawable.open_browser);
@@ -145,24 +144,6 @@ public class Guidance extends AppCompatActivity {
                 }
 
                 if (item.equals("Mr.Waugh (Sm-z)")) {
-                    AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
-                    // builder.setIcon(R.drawable.open_browser);
-                    builder.setTitle("          OPEN URL?");
-                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            goToUrl("https://docs.google.com/forms/d/e/1FAIpQLSePsqIw9Rz0kNAt-89dTBVmx93MP0xMPt7Xcbw-DwWJ1-0KSA/viewform");
-                        }
-                    });
-                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.setCancelable(true);
-                    builder.show();
-                }
-                if (item.equals("Mr.Burks (College Connections Coach)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(Guidance.this);
                     // builder.setIcon(R.drawable.open_browser);

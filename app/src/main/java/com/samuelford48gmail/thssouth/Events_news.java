@@ -1,11 +1,6 @@
 package com.samuelford48gmail.thssouth;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by samuelford on 5/24/18.
