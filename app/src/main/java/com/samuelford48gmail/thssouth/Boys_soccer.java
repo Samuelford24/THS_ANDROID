@@ -16,16 +16,16 @@ import java.util.ArrayList;
 
 public class Boys_soccer extends AppCompatActivity {
     DatabaseReference dref;
-    ListView listview2;
+    ListView listViewBSoccer;
     ArrayList<String> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.boys_soccer);
-        listview2 = (ListView) findViewById(R.id.listview_boyssoccer);
+        setContentView(R.layout.list_item);
+        listViewBSoccer = findViewById(R.id.list_item);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-        listview2.setAdapter(adapter);
+        listViewBSoccer.setAdapter(adapter);
         dref = FirebaseDatabase.getInstance().getReference("Boys_soccer");
         dref.addChildEventListener(new ChildEventListener() {
             @Override

@@ -2,13 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
-
-    <item
-        android:id="@+id/Events"
-        android:title="Events"
-
-        />
     <item
         android:id="@+id/Announcements"
         android:title="Announcements" />
@@ -16,19 +9,9 @@
         android:id="@+id/Guidance"
         android:title="Guidance" />
     <item
-        android:id="@+id/tutoring"
-        android:title="Tutoring" />
-
-    <item
         android:id="@+id/forms"
         android:title="Forms" />
-
-    <item
-        android:id="@+id/settings"
-        android:title="Settings" />
     <item
         android:id="@+id/sports"
         android:title="Sports" />
-
-
 </menu>

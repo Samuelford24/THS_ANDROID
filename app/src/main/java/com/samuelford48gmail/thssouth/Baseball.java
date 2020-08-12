@@ -16,22 +16,24 @@ import java.util.ArrayList;
 
 public class Baseball extends AppCompatActivity {
     DatabaseReference dref;
-    ListView listview3;
-    ArrayList<String> list=new ArrayList<>();
+    ListView listViewBaseBall;
+    ArrayList<String> list = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.baseball);
-        listview3=(ListView)findViewById(R.id.baseball);
-        final ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list);
-        listview3.setAdapter(adapter);
-        dref= FirebaseDatabase.getInstance().getReference("Baseball");
+        setContentView(R.layout.list_item);
+        listViewBaseBall = findViewById(R.id.list_item);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
+        listViewBaseBall.setAdapter(adapter);
+        dref = FirebaseDatabase.getInstance().getReference("Baseball");
         dref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 list.add(dataSnapshot.getValue(String.class));
                 adapter.notifyDataSetChanged();
             }
+
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
             }

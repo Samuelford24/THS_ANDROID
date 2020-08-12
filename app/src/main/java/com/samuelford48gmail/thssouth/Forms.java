@@ -11,10 +11,12 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,18 +24,50 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * all two hour delay related objects and methods may be added later
+ * do not delete them!
+ */
 public class Forms extends AppCompatActivity {
     Bitmap map;
     Bitmap schedule;
-
     // Bitmap twohourdelay;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forms);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_forms);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.nav_announcements:
+                        startActivity(new Intent(getApplicationContext(), Announcements.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.nav_sports:
+                        startActivity(new Intent(getApplicationContext(), Sports.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.nav_guidance:
+                        startActivity(new Intent(getApplicationContext(), Guidance.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.nav_forms:
+                        return true;
+                }
+                return false;
+            }
+        });
         ListView lv = (ListView) findViewById(R.id.listview_forms);
 
 
@@ -74,14 +108,14 @@ public class Forms extends AppCompatActivity {
                     builder.setTitle("Downloaded");
                     builder.setMessage(" Go to your Files and then to images");
                     builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.dismiss();
+                                }
+                            }
+                    );
 
                     builder.setCancelable(true);
                     builder.show();
-
                 }
                 if (item.equals("Schedules")) {
                     ActivityCompat.requestPermissions(Forms.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
@@ -99,7 +133,6 @@ public class Forms extends AppCompatActivity {
 
                     builder.setCancelable(true);
                     builder.show();
-
                 }
                 /*if (item.equals("Two hour delay schedule")) {
                     ActivityCompat.requestPermissions(Forms.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);

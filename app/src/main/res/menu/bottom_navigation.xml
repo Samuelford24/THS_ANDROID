@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"
+        app:itemTextAppearanceActive="@style/BottomNavigation.ActiveItemTextAppearance" />
+    <item
+        android:id="@+id/nav_announcements"
+        android:icon="@drawable/ic_baseline_announcement_24"
+        android:title="Announcements"
+        app:itemTextAppearanceActive="@style/BottomNavigation.ActiveItemTextAppearance" />
+    <item
+        android:id="@+id/nav_guidance"
+        android:icon="@drawable/ic_baseline_school_24"
+        android:title="Guidance"
+        app:itemTextAppearanceActive="@style/BottomNavigation.ActiveItemTextAppearance" />
+    <item
+        android:id="@+id/nav_forms"
+        android:icon="@drawable/ic_baseline_create_24"
+        android:title="Forms"
+        app:itemTextAppearanceActive="@style/BottomNavigation.ActiveItemTextAppearance" />
+    <item
+        android:id="@+id/nav_sports"
+        android:icon="@drawable/ic_baseline_emoji_events_24"
+        android:title="Sports"
+        app:itemTextAppearanceActive="@style/BottomNavigation.ActiveItemTextAppearance" />
+
+</menu>

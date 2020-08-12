@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Admin_dr_haworth extends AppCompatActivity {
+    /*
     DatabaseReference dref;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +22,14 @@ public class Admin_dr_haworth extends AppCompatActivity {
     }
 
     public void send(View view) {
-        EditText text = (EditText) findViewById(R.id.edit_text_add_tutor);
+        EditText text = findViewById(R.id.edit_text_add_tutor);
         String getevent = text.getText().toString();
         dref.push().setValue(getevent);
         Toast.makeText(Admin_dr_haworth.this, "Successfully uploaded",
                 Toast.LENGTH_LONG).show();
 
     }
+
+     */
 }
 

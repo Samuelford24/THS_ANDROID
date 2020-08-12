@@ -14,19 +14,19 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class Events extends AppCompatActivity {
+public class Girls_tf extends AppCompatActivity {
     DatabaseReference dref;
-    ListView listview3;
+    ListView listViewGirlsTF;
     ArrayList<String> list = new ArrayList<>();
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.events);
-        listview3 = (ListView) findViewById(R.id.list_view3);
+        setContentView(R.layout.list_item);
+        listViewGirlsTF = (ListView) findViewById(R.id.list_item);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-        listview3.setAdapter(adapter);
-        dref = FirebaseDatabase.getInstance().getReference("Events");
+        listViewGirlsTF.setAdapter(adapter);
+        dref = FirebaseDatabase.getInstance().getReference("Girls_tf");
         dref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -37,23 +37,19 @@ public class Events extends AppCompatActivity {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
             }
-
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
                 list.remove(dataSnapshot.getValue(String.class));
                 adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
     }
-
 
 }
 

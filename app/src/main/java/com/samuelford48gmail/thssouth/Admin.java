@@ -14,20 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Admin extends AppCompatActivity {
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin);
-        ListView lv = (ListView) findViewById(R.id.listview_admin);
+        ListView lv = findViewById(R.id.listview_admin);
 
 
         List<String> arrayList = new ArrayList<String>();
-        arrayList.add("Events");
         arrayList.add("Delays");
         arrayList.add("Announcements");
-        arrayList.add("Add a tutor");
-        arrayList.add("View tutors that have registered");
-        arrayList.add("Delays");
         arrayList.add("Sports");
 
 
@@ -43,33 +40,19 @@ public class Admin extends AppCompatActivity {
                                     long id) {
 
                 String item = ((TextView) view).getText().toString();
-                if (item.equals("Events")) {
-                    Intent intent = new Intent(Admin.this, Admin_events.class);
-                    startActivity(intent);
-                }
-                if (item.equals("Delays")) {
-                    Intent intent = new Intent(Admin.this, Admin_delays.class);
-                    startActivity(intent);
-                }
-                if (item.equals("Announcements")) {
-                    Intent intent = new Intent(Admin.this, Admin_announcements.class);
-                    startActivity(intent);
-                }
-                if (item.equals("Add a tutor")) {
-                    Intent intent = new Intent(Admin.this, Admin_add_tutor.class);
-                    startActivity(intent);
-                }
-                if (item.equals("View tutors that have registered")) {
-                    Intent intent = new Intent(Admin.this, Admin_view_tutors.class);
-                    startActivity(intent);
-                }
-                if (item.equals("Dr.Rowshandel")) {
-                    Intent intent = new Intent(Admin.this, Admin_dr_haworth.class);
-                    startActivity(intent);
-                }
-                if (item.equals("Sports")) {
-                    Intent intent = new Intent(Admin.this, Admin_sports.class);
-                    startActivity(intent);
+                switch (item) {
+                    case "Delays":
+                        startActivity(new Intent(Admin.this, Admin_delays.class));
+                        break;
+                    case "Announcements":
+                        startActivity(new Intent(Admin.this, Admin_announcements.class));
+                        break;
+                    case "Dr.Rowshandel":
+                        startActivity(new Intent(Admin.this, Admin_dr_haworth.class));
+                        break;
+                    case "Sports":
+                        startActivity(new Intent(Admin.this, Admin_sports.class));
+                        break;
                 }
             }
             /// private void goToUrl (String url) {
@@ -84,5 +67,5 @@ public class Admin extends AppCompatActivity {
         });
     }
 
-
+*/
 }

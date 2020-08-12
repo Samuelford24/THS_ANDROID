@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,19 +17,46 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by samuelford on 5/24/18.
- */
+
 
 public class Guidance extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.guidance);
-        ListView lv = (ListView) findViewById(R.id.listview);
-
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_guidance);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.nav_announcements:
+                        startActivity(new Intent(getApplicationContext(), Announcements.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.nav_sports:
+                        startActivity(new Intent(getApplicationContext(), Sports.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.nav_guidance:
+                        return true;
+                    case R.id.nav_forms:
+                        startActivity(new Intent(getApplicationContext(), Forms.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
+        ListView lv = findViewById(R.id.listview);
 
         List<String> arrayList = new ArrayList<String>();
         arrayList.add("Ms.Harden (A-Cl)");

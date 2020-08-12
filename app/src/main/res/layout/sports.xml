@@ -7,11 +7,9 @@
     android:background="#FFF3E0">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFF3E0">
-
         <ImageButton
             android:id="@+id/left_r2"
             android:layout_width="wrap_content"
@@ -161,6 +159,16 @@
             app:layout_constraintStart_toStartOf="@+id/right_r3"
             app:layout_constraintTop_toBottomOf="@+id/right_r3" />
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:itemBackground="@color/colorPrimary"
+            app:itemTextColor="@drawable/selector"
+            app:itemIconTint="@drawable/selector"
+            app:menu="@menu/bottom_navigation"
+            app:layout_constraintBottom_toBottomOf="parent" />
         <!--
                 <ImageButton
                     android:id="@+id/imageButton5"
@@ -173,7 +181,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView7"
                     app:srcCompat="@drawable/swimming" />
-
                 <ImageButton
                     android:id="@+id/imageButton3"
                     android:layout_width="wrap_content"
@@ -185,7 +192,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/basketball" />
-
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:layout_width="70dp"
@@ -193,14 +199,12 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="125dp"
-
                     android:layout_marginStart="125dp"
                     android:layout_marginTop="40dp"
                     android:onClick="open_football"
                     app:layout_constraintStart_toEndOf="@+id/imageButton6"
                     app:layout_constraintTop_toBottomOf="@+id/textView6"
                     app:srcCompat="@drawable/football_icon" />
-
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
@@ -215,7 +219,6 @@
                     app:fontFamily="casual"
                     app:layout_constraintStart_toEndOf="@+id/textView3"
                     app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
                 <ImageButton
                     android:id="@+id/imageButton2"
                     android:layout_width="wrap_content"
@@ -227,7 +230,6 @@
                     app:layout_constraintStart_toEndOf="@+id/imageButton3"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/basketball" />
-
                 <ImageButton
                     android:id="@+id/imageButton4"
                     android:layout_width="wrap_content"
@@ -239,7 +241,6 @@
                     app:layout_constraintStart_toEndOf="@+id/imageButton5"
                     app:layout_constraintTop_toBottomOf="@+id/textView2"
                     app:srcCompat="@drawable/swimming" />
-
                 <ImageButton
                     android:id="@+id/imageButton6"
                     android:layout_width="wrap_content"
@@ -251,7 +252,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView4"
                     app:srcCompat="@drawable/wrestling" />
-
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
@@ -264,7 +264,6 @@
                     android:textColor="#000000"
                     app:layout_constraintStart_toEndOf="@+id/textView7"
                     app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
                 <TextView
                     android:id="@+id/textView7"
                     android:layout_width="wrap_content"
@@ -277,7 +276,6 @@
                     android:textColor="#000000"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
-
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
@@ -290,7 +288,6 @@
                     android:textColor="#000000"
                     app:layout_constraintStart_toEndOf="@+id/textView4"
                     app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
-
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
@@ -303,7 +300,6 @@
                     android:textColor="#000000"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
-
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
@@ -324,7 +320,6 @@
                 A
                 L
                 L
-
                 S
                 P
                 O
@@ -344,7 +339,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView8"
                             app:srcCompat="@drawable/soccer_icon" />
-
                         <ImageButton
                             android:id="@+id/imageButton7"
                             android:layout_width="wrap_content"
@@ -358,7 +352,6 @@
                             app:layout_constraintStart_toEndOf="@+id/imageButton3"
                             app:layout_constraintTop_toBottomOf="@+id/textView6"
                             app:srcCompat="@drawable/runner_icon" />
-
                         //<TextView
                             android:id="@+id/textView5"
                             android:layout_width="wrap_content"
@@ -374,7 +367,6 @@
                             app:fontFamily="casual"
                             app:layout_constraintStart_toEndOf="@+id/textView8"
                             app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
                         <TextView
                             android:id="@+id/textView4"
                             android:layout_width="wrap_content"
@@ -390,7 +382,6 @@
                             app:fontFamily="casual"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
-
                         <TextView
                             android:id="@+id/textView8"
                             android:layout_width="wrap_content"
@@ -406,7 +397,6 @@
                             app:fontFamily="casual"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
-
                         <TextView
                             android:id="@+id/textView9"
                             android:layout_width="wrap_content"
@@ -421,7 +411,6 @@
                             app:fontFamily="casual"
                             app:layout_constraintStart_toEndOf="@+id/textView4"
                             app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
                         <TextView
                             android:id="@+id/textView7"
                             android:layout_width="wrap_content"
@@ -436,7 +425,6 @@
                             app:fontFamily="casual"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
-
                         <TextView
                             android:id="@+id/textView3"
                             android:layout_width="wrap_content"
@@ -451,7 +439,6 @@
                             app:fontFamily="casual"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
-
                         <TextView
                             android:id="@+id/textView2"
                             android:layout_width="141dp"
@@ -466,7 +453,6 @@
                             app:fontFamily="casual"
                             app:layout_constraintStart_toEndOf="@+id/textView3"
                             app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
-
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="wrap_content"
@@ -482,7 +468,6 @@
                             app:fontFamily="casual"
                             app:layout_constraintStart_toEndOf="@+id/textView7"
                             app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
-
                        // <ImageButton
                             android:id="@+id/imageButton"
                             android:layout_width="wrap_content"
@@ -496,7 +481,6 @@
                             app:layout_constraintStart_toEndOf="@+id/imageButton4"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/football_icon" />
-
                         <ImageButton
                             android:id="@+id/imageButton2"
                             android:layout_width="wrap_content"
@@ -510,7 +494,6 @@
                             app:layout_constraintStart_toEndOf="@+id/imageButton8"
                             app:layout_constraintTop_toBottomOf="@+id/textView5"
                             app:srcCompat="@drawable/soccer_icon" />
-
                         <ImageButton
                             android:id="@+id/imageButton3"
                             android:layout_width="wrap_content"
@@ -524,7 +507,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView7"
                             app:srcCompat="@drawable/runner_icon" />
-
                         <ImageButton
                             android:id="@+id/imageButton4"
                             android:layout_width="wrap_content"
@@ -538,7 +520,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/golf_icon" />
-
                         <ImageButton
                             android:id="@+id/imageButton5"
                             android:layout_width="wrap_content"
@@ -552,7 +533,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView4"
                             app:srcCompat="@drawable/tennis_icon" />
-
                         <ImageButton
                             android:id="@+id/imageButton6"
                             android:layout_width="wrap_content"

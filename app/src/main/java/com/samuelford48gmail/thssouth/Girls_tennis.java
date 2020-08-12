@@ -16,26 +16,29 @@ import java.util.ArrayList;
 
 public class Girls_tennis extends AppCompatActivity {
     DatabaseReference dref;
-    ListView listview3;
-    ArrayList<String> list=new ArrayList<>();
+    ListView listViewGTennis;
+    ArrayList<String> list = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.girls_tennis);
+        setContentView(R.layout.list_item);
         final String sport = getIntent().getStringExtra("sport");
-        listview3=(ListView)findViewById(R.id.girls_tennis);
-        final ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list);
-        listview3.setAdapter(adapter);
-        dref= FirebaseDatabase.getInstance().getReference(sport);
+        listViewGTennis = findViewById(R.id.list_item);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
+        listViewGTennis.setAdapter(adapter);
+        dref = FirebaseDatabase.getInstance().getReference(sport);
         dref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 list.add(dataSnapshot.getValue(String.class));
                 adapter.notifyDataSetChanged();
             }
+
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
             }
+
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
                 list.remove(dataSnapshot.getValue(String.class));
