@@ -22,41 +22,8 @@
         <activity
             android:name=".Forms"
             android:label="Forms" />
-        <activity android:name=".Boys_golf" />
         <activity android:name=".Girls_tennis" />
-        <activity android:name=".Softball" />
-        <activity android:name=".Baseball" />
         <activity android:name=".Girls_tf" />
-        <activity android:name=".Boys_tf" />
-        <activity android:name=".Boys_basketball" />
-        <activity android:name=".Boys_swimming" />
-        <activity android:name=".Wrestling" />
-        <activity android:name=".Girls_swimming" />
-        <activity android:name=".Girls_basketball" />
-        <activity
-            android:name=".Boys_cross_country"
-            android:label="Boy&apos;s CC" />
-        <activity
-            android:name=".Boys_soccer"
-            android:label="Boy&apos;s Soccer" />
-        <activity
-            android:name=".Football"
-            android:label="Football" />
-        <activity
-            android:name=".Girls_cross_country"
-            android:label="Girl&apos;s CC" />
-        <activity
-            android:name=".Girls_soccer"
-            android:label="Girl&apos;s Soccer" />
-        <activity
-            android:name=".Boys_tennis"
-            android:label="Boy&apos;s Tennis" />
-        <activity
-            android:name=".Golf"
-            android:label="Girl&apos;s Golf" />
-        <activity
-            android:name=".Volley_ball"
-            android:label="Volley Ball" />
         <activity
             android:name=".Announcements"
             android:label="Announcements" />
