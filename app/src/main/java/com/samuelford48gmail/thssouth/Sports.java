@@ -5,31 +5,33 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class Sports extends AppCompatActivity implements View.OnClickListener {
+public class Sports extends Fragment implements View.OnClickListener {
     private Button one, two, three, four, five, six, seven, eight;
     private String sport;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.sports);
-        one = findViewById(R.id.left_r1);
-        two = findViewById(R.id.left_r2);
-        three = findViewById(R.id.left_r3);
-        four = findViewById(R.id.right_r1);
-        five = findViewById(R.id.right_r2);
-        six = findViewById(R.id.right_r3);
-        //   seven = (ImageButton) findViewById(R.id.left_r3);
-        // eight = (ImageButton) findViewById(R.id.right_r3);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.sports, container, false);
+        one = view.findViewById(R.id.girls_cc_btn);
+        two = view.findViewById(R.id.boys_cc_btn);
+        three = view.findViewById(R.id.boys_football_btn);
+        four = view.findViewById(R.id.boys_soccer_btn);
+        five = view.findViewById(R.id.girls_volleyball_btn);
+        six = view.findViewById(R.id.girls_soccer_btn);
+        seven = view.findViewById(R.id.girls_golf_btn);
+        eight = view.findViewById(R.id.boys_tennis_btn);
 
         one.setOnClickListener(this);
         two.setOnClickListener(this);
@@ -37,8 +39,10 @@ public class Sports extends AppCompatActivity implements View.OnClickListener {
         four.setOnClickListener(this);
         five.setOnClickListener(this);
         six.setOnClickListener(this);
-        //  seven.setOnClickListener(this);
-        //eight.setOnClickListener(this);
+        seven.setOnClickListener(this);
+        eight.setOnClickListener(this);
+
+        /*
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_sports);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -67,45 +71,58 @@ public class Sports extends AppCompatActivity implements View.OnClickListener {
                 return false;
             }
         });
-
+*/
+        return view;
     }
 
     public void onClick(View v) {
         Intent i;
         switch (v.getId()) {
-            case R.id.left_r1:
-                i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Boys_bball";
+            case R.id.girls_cc_btn:
+                i = new Intent(getContext(), Girls_tennis.class);
+                sport = "Girls_cross_country";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
-            case R.id.left_r2:
-                i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Boys_swimming";
+            case R.id.boys_cc_btn:
+                i = new Intent(getContext(), Girls_tennis.class);
+                sport = "Boys_cross_country";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
-            case R.id.left_r3:
-                i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Wrestling";
+            case R.id.boys_football_btn:
+                i = new Intent(getContext(), Girls_tennis.class);
+                sport = "Boys_football";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
-            case R.id.right_r1:
-                i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Girls_bball";
+            case R.id.boys_soccer_btn:
+                i = new Intent(getContext(), Girls_tennis.class);
+                sport = "Boys_soccer";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
-            case R.id.right_r2:
-                i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Girls_swimming";
+            case R.id.girls_volleyball_btn:
+                i = new Intent(getContext(), Girls_tennis.class);
+                sport = "Girls_volleyball";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
-            case R.id.right_r3:
-                i = new Intent(Sports.this, Girls_tennis.class);
-                sport = "Bowling";
+            case R.id.girls_golf_btn:
+                i = new Intent(getContext(), Girls_tennis.class);
+                sport = "Girls_golf";
+                i.putExtra("sport", sport);
+                startActivity(i);
+                break;
+            case R.id.girls_soccer_btn:
+                i = new Intent(getContext(), Girls_tennis.class);
+                sport = "Girls_soccer";
+                i.putExtra("sport", sport);
+                startActivity(i);
+                break;
+            case R.id.boys_tennis_btn:
+                i = new Intent(getContext(), Girls_tennis.class);
+                sport = "Boys_tennis";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
