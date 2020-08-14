@@ -8,9 +8,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -23,11 +26,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+public class Guidance extends Fragment {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.guidance, container, false);
 
-public class Guidance extends AppCompatActivity {
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.guidance);
+
+        /*
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_guidance);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -55,8 +62,8 @@ public class Guidance extends AppCompatActivity {
                 }
                 return false;
             }
-        });
-        ListView lv = findViewById(R.id.listview);
+        });*/
+        ListView lv = view.findViewById(R.id.listview);
 
         List<String> arrayList = new ArrayList<String>();
         arrayList.add("Ms.Harden (A-Cl)");
@@ -69,7 +76,7 @@ public class Guidance extends AppCompatActivity {
 
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this,
+                getContext(),
                 android.R.layout.simple_list_item_1,
                 arrayList);
 
@@ -82,7 +89,7 @@ public class Guidance extends AppCompatActivity {
                 String item = ((TextView) view).getText().toString();
                 if (item.equals("Ms.Harden (A-Cl)")) {
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
+                    builder = new AlertDialog.Builder(getContext());
                     //builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("          OPEN URL?");
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -100,7 +107,7 @@ public class Guidance extends AppCompatActivity {
                 }
                 if (item.equals("Mr.Harden (C0-G)")) {
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
+                    builder = new AlertDialog.Builder(getContext());
                     //builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("          OPEN URL?");
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -118,7 +125,7 @@ public class Guidance extends AppCompatActivity {
                 }
                 if (item.equals("Mrs.Trench (H-L)")) {
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
+                    builder = new AlertDialog.Builder(getContext());
                     // builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("          OPEN URL?");
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -137,7 +144,7 @@ public class Guidance extends AppCompatActivity {
 
                 if (item.equals("Mrs.Compton (M-Ri)")) {
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
+                    builder = new AlertDialog.Builder(getContext());
                     //builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("          OPEN URL?");
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -156,7 +163,7 @@ public class Guidance extends AppCompatActivity {
 
                 if (item.equals("Mrs.Tracy (Ro-Sn)")) {
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
+                    builder = new AlertDialog.Builder(getContext());
                     // builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("          OPEN URL?");
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -175,7 +182,7 @@ public class Guidance extends AppCompatActivity {
 
                 if (item.equals("Mr.Waugh (Sm-z)")) {
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
+                    builder = new AlertDialog.Builder(getContext());
                     // builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("          OPEN URL?");
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -193,7 +200,7 @@ public class Guidance extends AppCompatActivity {
                 }
                 if (item.equals("Mrs.Callahan (JAG)")) {
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Guidance.this);
+                    builder = new AlertDialog.Builder(getContext());
                     // builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("          OPEN URL?");
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -215,12 +222,13 @@ public class Guidance extends AppCompatActivity {
                 Uri uriUrl = Uri.parse(url);
                 Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
                 startActivity(launchBrowser);
-                Toast.makeText(getApplicationContext(), "Loading...",
+                Toast.makeText(getContext(), "Loading...",
                         Toast.LENGTH_LONG).show();
 //                Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
 
             }
         });
+        return view;
     }
 
 }

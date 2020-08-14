@@ -19,20 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Forms"
-            android:label="Forms" />
+
         <activity android:name=".Girls_tennis" />
-        <activity android:name=".Girls_tf" />
-        <activity
-            android:name=".Announcements"
-            android:label="Announcements" />
-        <activity
-            android:name=".Sports"
-            android:label="Sports" />
-        <activity
-            android:name=".Guidance"
-            android:label="Guidance" />
+
+
     </application>
 
 </manifest>

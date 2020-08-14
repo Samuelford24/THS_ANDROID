@@ -5,28 +5,37 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class Sports extends AppCompatActivity implements View.OnClickListener {
+public class Sports extends Fragment implements View.OnClickListener {
     private ImageButton one, two, three, four, five, six, seven, eight;
     private String sport;
 
+    public Sports() {
+    }
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.sports);
-        one = findViewById(R.id.left_r1);
-        two = findViewById(R.id.left_r2);
-        three = findViewById(R.id.left_r3);
-        four = findViewById(R.id.right_r1);
-        five = findViewById(R.id.right_r2);
-        six = findViewById(R.id.right_r3);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.sports, container, false);
+
+
+        one = view.findViewById(R.id.left_r1);
+        two = view.findViewById(R.id.left_r2);
+        three = view.findViewById(R.id.left_r3);
+        four = view.findViewById(R.id.right_r1);
+        five = view.findViewById(R.id.right_r2);
+        six = view.findViewById(R.id.right_r3);
         //   seven = (ImageButton) findViewById(R.id.left_r3);
         // eight = (ImageButton) findViewById(R.id.right_r3);
 
@@ -38,6 +47,7 @@ public class Sports extends AppCompatActivity implements View.OnClickListener {
         six.setOnClickListener(this);
         //  seven.setOnClickListener(this);
         //eight.setOnClickListener(this);
+        /*
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_sports);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -66,44 +76,45 @@ public class Sports extends AppCompatActivity implements View.OnClickListener {
                 return false;
             }
         });
-
+*/
+        return view;
     }
 
     public void onClick(View v) {
         Intent i;
         switch (v.getId()) {
             case R.id.left_r1:
-                i = new Intent(Sports.this, Girls_tennis.class);
+                i = new Intent(getContext(), Girls_tennis.class);
                 sport = "Boys_bball";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.left_r2:
-                i = new Intent(Sports.this, Girls_tennis.class);
+                i = new Intent(getContext(), Girls_tennis.class);
                 sport = "Boys_swimming";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.left_r3:
-                i = new Intent(Sports.this, Girls_tennis.class);
+                i = new Intent(getContext(), Girls_tennis.class);
                 sport = "Wrestling";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.right_r1:
-                i = new Intent(Sports.this, Girls_tennis.class);
+                i = new Intent(getContext(), Girls_tennis.class);
                 sport = "Girls_bball";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.right_r2:
-                i = new Intent(Sports.this, Girls_tennis.class);
+                i = new Intent(getContext(), Girls_tennis.class);
                 sport = "Girls_swimming";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.right_r3:
-                i = new Intent(Sports.this, Girls_tennis.class);
+                i = new Intent(getContext(), Girls_tennis.class);
                 sport = "Bowling";
                 i.putExtra("sport", sport);
                 startActivity(i);

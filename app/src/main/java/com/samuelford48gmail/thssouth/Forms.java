@@ -1,6 +1,7 @@
 package com.samuelford48gmail.thssouth;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,9 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -33,14 +37,23 @@ import java.util.List;
  * all two hour delay related objects and methods may be added later
  * do not delete them!
  */
-public class Forms extends AppCompatActivity {
+public class Forms extends Fragment {
     Bitmap map;
     Bitmap schedule;
+
     // Bitmap twohourdelay;
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.forms);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+    public Forms() {
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.forms, container, false);
+
+
+
+       /* BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_forms);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -66,23 +79,24 @@ public class Forms extends AppCompatActivity {
                         return true;
                 }
                 return false;
-            }
-        });
-        ListView lv = (ListView) findViewById(R.id.listview_forms);
+                */
+
+
+        ListView lv = (ListView) view.findViewById(R.id.listview_forms);
 
 
         List<String> arrayList = new ArrayList<String>();
         arrayList.add("School Map");
         arrayList.add("Schedules");
         arrayList.add("Physical Form");
-        //arrayList.add("Two hour delay schedule");
+
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this,
+                getContext(),
                 android.R.layout.simple_list_item_1,
                 arrayList);
 
         lv.setAdapter(arrayAdapter);
-        ActivityCompat.requestPermissions(Forms.this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
+        ActivityCompat.requestPermissions((Activity) getContext(), new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
         Drawable drawable = getResources().getDrawable(R.drawable.school_map);
         Drawable drawable1 = getResources().getDrawable(R.drawable.schedule2020);
         //Drawable drawable3 = getResources().getDrawable(R.drawable.two_hour_delay);
@@ -100,10 +114,10 @@ public class Forms extends AppCompatActivity {
 
                 String item = ((TextView) view).getText().toString();
                 if (item.equals("School Map")) {
-                    ActivityCompat.requestPermissions(Forms.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
+                    ActivityCompat.requestPermissions((Activity) getContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
                     downloadFile();
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Forms.this);
+                    builder = new AlertDialog.Builder(getContext());
                     //builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("Downloaded");
                     builder.setMessage(" Go to your Files and then to images");
@@ -117,11 +131,12 @@ public class Forms extends AppCompatActivity {
                     builder.setCancelable(true);
                     builder.show();
                 }
+                //need to see if permission request still shows
                 if (item.equals("Schedules")) {
-                    ActivityCompat.requestPermissions(Forms.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
+                    ActivityCompat.requestPermissions((Activity) getContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
                     download_schedule();
                     AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(Forms.this);
+                    builder = new AlertDialog.Builder(getContext());
                     //builder.setIcon(R.drawable.open_browser);
                     builder.setTitle("Downloaded");
                     builder.setMessage(" Go to your Files and then to images");
@@ -158,15 +173,15 @@ public class Forms extends AppCompatActivity {
 
             }
         });
-
+        return view;
     }
 
 
     public void school_map(View view) {
-        ActivityCompat.requestPermissions(Forms.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
+        ActivityCompat.requestPermissions((Activity) getContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
         downloadFile();
         AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(Forms.this);
+        builder = new AlertDialog.Builder(getContext());
         //builder.setIcon(R.drawable.open_browser);
         builder.setTitle("Downloaded");
         builder.setMessage(" Go to your Files and then to images");
@@ -181,10 +196,10 @@ public class Forms extends AppCompatActivity {
     }
 
     public void Schedules(View view) {
-        ActivityCompat.requestPermissions(Forms.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
+        ActivityCompat.requestPermissions((Activity) getContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2909);
         download_schedule();
         AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(Forms.this);
+        builder = new AlertDialog.Builder(getContext());
         //builder.setIcon(R.drawable.open_browser);
         builder.setTitle("Downloaded");
         builder.setMessage(" Go to your Files and then to images");
@@ -208,7 +223,7 @@ public class Forms extends AppCompatActivity {
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
-        Toast.makeText(getApplicationContext(), "Loading...",
+        Toast.makeText(getContext(), "Loading...",
                 Toast.LENGTH_LONG).show();
 //                Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show()
     }
@@ -228,16 +243,16 @@ public class Forms extends AppCompatActivity {
     //}
 
     private void saveImage1(Bitmap finalBitmap) {
-        MediaStore.Images.Media.insertImage(this.getContentResolver(), finalBitmap, "School Map", "School Map"
+        MediaStore.Images.Media.insertImage(getContext().getContentResolver(), finalBitmap, "School Map", "School Map"
         );
     }
 
     private void saveImage(Bitmap finalBitmap) {
-        MediaStore.Images.Media.insertImage(this.getContentResolver(), finalBitmap, "Schedules", "Schedules");
+        MediaStore.Images.Media.insertImage(getContext().getContentResolver(), finalBitmap, "Schedules", "Schedules");
     }
 
     private void saveImage2(Bitmap finalBitmap) {
-        MediaStore.Images.Media.insertImage(this.getContentResolver(), finalBitmap, "Two hour delay schedule", "Two hour delay schedule");
+        MediaStore.Images.Media.insertImage(getContext().getContentResolver(), finalBitmap, "Two hour delay schedule", "Two hour delay schedule");
     }
 
 

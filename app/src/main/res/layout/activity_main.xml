@@ -7,41 +7,13 @@
     android:layout_height="match_parent"
     android:background="#FFF3E0">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="240dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toTopOf="@+id/listview_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/south_logo" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="8dp"
-        android:text="Delays and Cancellations:"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textStyle="bold|italic"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/listview_home"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_alignParentLeft="true" />
-
-    <ListView
-        android:id="@+id/listview_home"
+    <include
+        layout="@layout/content_main"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:clickable="false" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

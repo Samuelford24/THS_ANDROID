@@ -18,6 +18,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,62 +31,70 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listview_home;
-    ArrayList<String> list = new ArrayList<>();
+
+    final Fragment fragment1 = new HomeFragment();
+    final Fragment fragment2 = new Announcements();
+    final Fragment fragment3 = new Guidance();
+    final Fragment fragment4 = new Forms();
+    final Fragment fragment5 = new Sports();
+    final FragmentManager fm = getSupportFragmentManager();
+    Fragment active = fragment1;
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.nav_home:
+                    // mTextMessage.setText(R.string.title_home);
+                    fm.beginTransaction().hide(active).show(fragment1).commit();
+
+                    active = fragment1;
+                    fm.popBackStack();
+                    return true;
+                case R.id.nav_announcements:
+                    // mTextMessage.setText(R.string.title_dashboard);
+                    fm.beginTransaction().hide(active).show(fragment2).commit();
+                    active = fragment2;
+                    fm.popBackStack();
+                    return true;
+                case R.id.nav_guidance:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    fm.beginTransaction().hide(active).show(fragment3).commit();
+                    active = fragment3;
+                    fm.popBackStack();
+                    return true;
+                case R.id.nav_forms:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    fm.beginTransaction().hide(active).show(fragment4).commit();
+                    active = fragment4;
+                    fm.popBackStack();
+                    return true;
+                case R.id.nav_sports:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    fm.beginTransaction().hide(active).show(fragment5).commit();
+                    active = fragment5;
+                    fm.popBackStack();
+                    return true;
+
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.nav_home:
-                        return true;
-                    case R.id.nav_announcements:
-                        startActivity(new Intent(getApplicationContext(), Announcements.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.nav_sports:
-                        startActivity(new Intent(getApplicationContext(), Sports.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.nav_guidance:
-                        startActivity(new Intent(getApplicationContext(), Guidance.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.nav_forms:
-                        startActivity(new Intent(getApplicationContext(), Forms.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                }
-                return false;
-            }
-        });
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        fm.beginTransaction().add(R.id.main_container, fragment5, "5").hide(fragment5).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit();
 
-        listview_home = findViewById(R.id.listview_home);
-        listview_home.setStackFromBottom(true);
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-        listview_home.setAdapter(adapter);
-        FirebaseFirestore.getInstance().collection("Delays").addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
-                if (queryDocumentSnapshots != null && !queryDocumentSnapshots.isEmpty()) {
-                    list.clear();
-                    for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                        list.add(documentSnapshot.get("delay").toString());
-                        adapter.notifyDataSetChanged();
-                    }
-                }
-            }
-        });
-
-
-            }
-
+    }
 }
 
 
