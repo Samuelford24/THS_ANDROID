@@ -228,7 +228,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/soccer_icon" />
+            android:src="@drawable/tennis_icon" />
 
         <Button
             android:id="@+id/boys_tennis_btn"
