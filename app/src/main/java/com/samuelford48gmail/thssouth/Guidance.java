@@ -67,12 +67,11 @@ public class Guidance extends Fragment {
 
         List<String> arrayList = new ArrayList<String>();
         arrayList.add("Ms.Harden (A-Cl)");
-        arrayList.add("Mr.Harden (C0-G)");
+        arrayList.add("Mr.Harden (Co-G)");
         arrayList.add("Mrs.Trench (H-L)");
-        arrayList.add("Mrs.Compton (M-Ri)");
-        arrayList.add("Mrs.Tracy (Ro-Sn)");
-        arrayList.add("Mr.Waugh (S0-z)");
-        arrayList.add("Mrs.Callahan (JAG)");
+        arrayList.add("Mrs.Compton (M-Q)");
+        arrayList.add("Mrs.Tracy (R-Ss)");
+        arrayList.add("Mr.Waugh (St-Z)");
 
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
@@ -105,7 +104,7 @@ public class Guidance extends Fragment {
                     builder.setCancelable(true);
                     builder.show();
                 }
-                if (item.equals("Mr.Harden (C0-G)")) {
+                if (item.equals("Mr.Harden (Co-G)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(getContext());
                     //builder.setIcon(R.drawable.open_browser);
@@ -142,26 +141,7 @@ public class Guidance extends Fragment {
                     builder.show();
                 }
 
-                if (item.equals("Mrs.Compton (M-Ri)")) {
-                    AlertDialog.Builder builder;
-                    builder = new AlertDialog.Builder(getContext());
-                    //builder.setIcon(R.drawable.open_browser);
-                    builder.setTitle("          OPEN URL?");
-                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            goToUrl("https://docs.google.com/forms/d/e/1FAIpQLSePsqIw9Rz0kNAt-89dTBVmx93MP0xMPt7Xcbw-DwWJ1-0KSA/viewform");
-                        }
-                    });
-                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.setCancelable(true);
-                    builder.show();
-                }
-
-                if (item.equals("Mrs.Tracy (Ro-Sn)")) {
+                if (item.equals("Mrs.Compton (M-Q)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(getContext());
                     // builder.setIcon(R.drawable.open_browser);
@@ -180,7 +160,7 @@ public class Guidance extends Fragment {
                     builder.show();
                 }
 
-                if (item.equals("Mr.Waugh (Sm-z)")) {
+                if (item.equals("Mrs.Tracy (R-Ss)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(getContext());
                     // builder.setIcon(R.drawable.open_browser);
@@ -198,7 +178,7 @@ public class Guidance extends Fragment {
                     builder.setCancelable(true);
                     builder.show();
                 }
-                if (item.equals("Mrs.Callahan (JAG)")) {
+                if (item.equals("Mr.Waugh (St-Z)")) {
                     AlertDialog.Builder builder;
                     builder = new AlertDialog.Builder(getContext());
                     // builder.setIcon(R.drawable.open_browser);
