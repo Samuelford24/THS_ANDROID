@@ -80,49 +80,49 @@ public class Sports extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.girls_cc_btn:
                 i = new Intent(getContext(), Girls_tennis.class);
-                sport = "Girls_cross_country";
+                sport = "GCC";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.boys_cc_btn:
                 i = new Intent(getContext(), Girls_tennis.class);
-                sport = "Boys_cross_country";
+                sport = "BCC";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.boys_football_btn:
                 i = new Intent(getContext(), Girls_tennis.class);
-                sport = "Boys_football";
+                sport = "Football";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.boys_soccer_btn:
                 i = new Intent(getContext(), Girls_tennis.class);
-                sport = "Boys_soccer";
+                sport = "BSoccer";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.girls_volleyball_btn:
                 i = new Intent(getContext(), Girls_tennis.class);
-                sport = "Girls_volleyball";
+                sport = "Volleyball";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.girls_golf_btn:
                 i = new Intent(getContext(), Girls_tennis.class);
-                sport = "Girls_golf";
+                sport = "GGolf";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.girls_soccer_btn:
                 i = new Intent(getContext(), Girls_tennis.class);
-                sport = "Girls_soccer";
+                sport = "GSoccer";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
             case R.id.boys_tennis_btn:
                 i = new Intent(getContext(), Girls_tennis.class);
-                sport = "Boys_tennis";
+                sport = "BTennis";
                 i.putExtra("sport", sport);
                 startActivity(i);
                 break;
