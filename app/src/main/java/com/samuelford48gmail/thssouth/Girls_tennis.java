@@ -34,7 +34,7 @@ public class Girls_tennis extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    list.add(documentSnapshot.get("game").toString());
+                    list.add(documentSnapshot.get("sport").toString());
                     adapter.notifyDataSetChanged();
                 }
             }
