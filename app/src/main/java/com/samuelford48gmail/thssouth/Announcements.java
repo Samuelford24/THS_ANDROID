@@ -49,7 +49,9 @@ public class Announcements extends Fragment {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 if (queryDocumentSnapshots != null && !queryDocumentSnapshots.isEmpty()) {
+                    list.clear();
                     for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+
                         list.add(documentSnapshot.get("announcement").toString());
                         adapter.notifyDataSetChanged();
                     }
